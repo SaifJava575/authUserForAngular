@@ -1,0 +1,30 @@
+<div>
+  <h2>User Information</h2>
+  <form (ngSubmit)="validateUser()">
+    <div>
+      <label for="loginId">Login ID:</label>
+      <input type="text" id="loginId" [(ngModel)]="loginId" name="loginId" required>
+    </div>
+    <div>
+      <label for="password">Password:</label>
+      <input type="password" id="password" [(ngModel)]="password" name="password" required>
+    </div>
+    <button type="submit">Validate</button>
+  </form>
+
+  <div *ngIf="response">
+    <h3>Response</h3>
+    <p><strong>Login ID:</strong> {{ response.loginId }}</p>
+    <p><strong>Password:</strong> {{ response.userPwd }}</p>
+    <p><strong>Email:</strong> {{ response.userEmail }}</p>
+    <p><strong>Mobile No:</strong> {{ response.mobileNo }}</p>
+    <p><strong>Message:</strong> {{ response.message }}</p>
+    <p><strong>User Name:</strong> {{ response.userName }}</p>
+    <p><strong>User ID:</strong> {{ response.userId }}</p>
+    <p><strong>Active Flag:</strong> {{ response.activeFlag }}</p>
+  </div>
+
+  <div *ngIf="errorMessage">
+    <p class="error">{{ errorMessage }}</p>
+  </div>
+</div>
