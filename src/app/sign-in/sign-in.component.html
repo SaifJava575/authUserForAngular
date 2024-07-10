@@ -1,30 +1,84 @@
-<div>
-  <h2>User Information</h2>
-  <form (ngSubmit)="validateUser()">
-    <div>
-      <label for="loginId">Login ID:</label>
-      <input type="text" id="loginId" [(ngModel)]="loginId" name="loginId" required>
-    </div>
-    <div>
-      <label for="password">Password:</label>
-      <input type="password" id="password" [(ngModel)]="password" name="password" required>
-    </div>
-    <button type="submit">Validate</button>
-  </form>
 
-  <div *ngIf="response">
-    <h3>Response</h3>
-    <p><strong>Login ID:</strong> {{ response.loginId }}</p>
-    <p><strong>Password:</strong> {{ response.userPwd }}</p>
-    <p><strong>Email:</strong> {{ response.userEmail }}</p>
-    <p><strong>Mobile No:</strong> {{ response.mobileNo }}</p>
-    <p><strong>Message:</strong> {{ response.message }}</p>
-    <p><strong>User Name:</strong> {{ response.userName }}</p>
-    <p><strong>User ID:</strong> {{ response.userId }}</p>
-    <p><strong>Active Flag:</strong> {{ response.activeFlag }}</p>
-  </div>
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 
-  <div *ngIf="errorMessage">
-    <p class="error">{{ errorMessage }}</p>
-  </div>
-</div>
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+     <!-- <link rel="stylesheet" href="styles.css"> -->
+</head>
+<body>
+    <div class="login-container">
+        <h2>Login</h2>
+        <form (ngSubmit)="validateUser()">
+            <div class="input-group">
+                <label for="loginId">Login ID</label>
+                <input type="text" id="loginId" [(ngModel)]="loginId" name="loginId" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password</label>
+                <!-- <input type="password" id="password" name="password" required> -->
+                <input type="password" id="password" [(ngModel)]="password" name="password" required>
+            </div>
+            <button type="submit">Login</button>
+        </form>
+    </div>
+</body>
+</html>

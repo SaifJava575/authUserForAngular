@@ -9,7 +9,7 @@ import { SidebarmenuComponent } from './pages/sidebarmenu/sidebarmenu.component'
 const routes: Routes = [
   { path: 'sign-in', component: SignInComponent },
   { path: 'sign-up', component: SignUpComponent },
-  { path: '', redirectTo: '/sign-in', pathMatch: 'full' },
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   {
     path:'',
     component:LayoutComponent,
